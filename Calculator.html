@@ -1,142 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.grid-container {
-  display: grid;
-grid-template-columns: auto auto auto auto auto auto auto;
-  gap: 5px;
-  background-color: #f2f2f2;
-  padding: 5px;
-}
-.display1 {
-  display: grid;
+    <title>Calc</title>
+  <script src="Calculator.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-  gap: 5px;
-  background-color: #f2f2f2;
-  padding: 200px;
-}
-.display1 > div {
-  background-color: #ffffff;
-  text-align: right;
-  font-size: 100px;
-border-radius=50%
-}
-.display2 {
-  display: grid;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
 
-  gap: 5px;
-  background-color: ##b3b3b3;
-  padding: 200px;
-}
-.display2 > div {
-  background-color:##b3b3b3;
-  text-align: center;
-  font-size: 100px;
-border-radius=50%
-}
-.grid-container > div {
-text-align=center;
-  background-color: #ffffff;
-  text-align: center;
-  font-size: 30px;
-border-radius=50%
-}
-.button-class1 {
-                        text-align=center;
-			background-color: #0000ff;
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 30px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-.button-class2 {
-                        text-align=center;
-			background-color: #00ccff;
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 30px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-.button-class1:hover { 
-    background-color: #000066; 
-} 
-.button-class2:hover { 
-    background-color: #00b8e6; 
-}
-.button-class3:hover { 
-    background-color: #0047b3; 
-}
-.button-class3 {
-                        text-align=center;
-			background-color: #3385ff;
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 30px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-</style>
+    h1 {
+      font-size: 50px;
+      color: #003399;
+    }
+
+    .display2 {
+      background-color: #b3b3b3;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .display1 {
+      background-color: #f2f2f2;
+      text-align: right;
+      font-size: 50px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 400px;
+    }
+
+    .grid-container > button {
+      text-align: center;
+      background-color: #ffffff;
+      font-size: 30px;
+      border-radius: 10px;
+      padding: 20px;
+      width: 70px;
+      height: 70px;
+      margin: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button-class1, .button-class2, .button-class3 {
+      background-color: #0000ff;
+      color: white;
+    }
+
+    .button-class2 {
+      background-color: #00ccff;
+    }
+
+    .button-class3 {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    .button-class1:hover {
+      background-color: #000066;
+    }
+
+    .button-class2:hover {
+      background-color: #00b8e6;
+    }
+
+    .button-class3:hover {
+      background-color: #f0f0f0;
+    }
+
+    .button-class3 {
+      background-color: #d3d3d3;
+    }
+  </style>
 </head>
 <body>
-<h1 style="text-align:center; font-size:50px; color:#003399">Online Calculator</h1>
-<div class="display2">
-  <div><div>
-<div class="display1">
-  <div>0<div>
-<div class="grid-container">
-  <button class="button-class3">Rad</button>
-<button class="button-class3">Deg</button>
-<button class="button-class3">x!</button>
-<button class="button-class3">(</button>
-<button class="button-class3">)</button>
-<button class="button-class3">%</button>
-<button class="button-class3">AC</button>
-<button class="button-class3">lnv</button>
-<button class="button-class3">sin</button>
-<button class="button-class3">ln</button>
-<button class="button-class2">7</button>
-<button class="button-class2">8</button>
-<button class="button-class2">9</button>
-<button class="button-class3">/</button>
-<button class="button-class3">pi</button>
-<button class="button-class3">cos</button>
-<button class="button-class3">log</button>
-<button class="button-class2">4</button>
-<button class="button-class2">5</button>
-<button class="button-class2">6</button>
-<button class="button-class3">*</button>
-<button class="button-class3">e</button>
-<button class="button-class3">tan</button>
-<button class="button-class3">x^1/2</button>
-<button class="button-class2">1</button>
-<button class="button-class2">2</button>
-<button class="button-class2">3</button>
-<button class="button-class3">-</button>
-<button class="button-class3">ANS</button>
-<button class="button-class3">EXP</button>
-<button class="button-class3">x^y</button>
-<button class="button-class2">0</button>
-<button class="button-class2">.</button>
-<button class="button-class1">=</button>
-<button class="button-class3">+</button>
-</div>
+  <div class="container">
+    <h1>Online Calculator</h1>
+    <div class="display2">
+      <div class="display1" id="display1">
+        <div>0</div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <button class="button-class3" onclick="appendToDisplay('rad')">Rad</button>
+      <button class="button-class3" onclick="appendToDisplay('deg')">Deg</button>
+      <button class="button-class3" onclick="appendToDisplay('!')">x!</button>
+      <button class="button-class3" onclick="appendToDisplay('(')">(</button>
+      <button class="button-class3" onclick="appendToDisplay(')')">)</button>
+      <button class="button-class3" onclick="appendToDisplay('%')">%</button>
+      <button class="button-class3" onclick="clearDisplay()">AC</button>
+      <button class="button-class3" onclick="appendToDisplay('lnv')">lnv</button>
+      <button class="button-class3" onclick="appendToDisplay('sin')">sin</button>
+      <button class="button-class3" onclick="appendToDisplay('ln')">ln</button>
+      <button class="button-class2" onclick="appendToDisplay('7')">7</button>
+      <button class="button-class2" onclick="appendToDisplay('8')">8</button>
+      <button class="button-class2" onclick="appendToDisplay('9')">9</button>
+      <button class="button-class3" onclick="appendToDisplay('/')">/</button>
+      <button class="button-class3" onclick="appendToDisplay('pi')">pi</button>
+      <button class="button-class3" onclick="appendToDisplay('cos')">cos</button>
+      <button class="button-class3" onclick="appendToDisplay('log')">log</button>
+      <button class="button-class2" onclick="appendToDisplay('4')">4</button>
+      <button class="button-class2" onclick="appendToDisplay('5')">5</button>
+      <button class="button-class2" onclick="appendToDisplay('6')">6</button>
+      <button class="button-class3" onclick="appendToDisplay('*')">*</button>
+      <button class="button-class3" onclick="appendToDisplay('e')">e</button>
+      <button class="button-class3" onclick="appendToDisplay('tan')">tan</button>
+      <button class="button-class3" onclick="appendToDisplay('x^1/2')">x^1/2</button>
+      <button class="button-class2" onclick="appendToDisplay('1')">1</button>
+      <button class="button-class2" onclick="appendToDisplay('2')">2</button>
+      <button class="button-class2" onclick="appendToDisplay('3')">3</button>
+      <button class="button-class3" onclick="appendToDisplay('-')">-</button>
+      <button class="button-class3" onclick="appendToDisplay('ANS')">ANS</button>
+      <button class="button-class3" onclick="appendToDisplay('EXP')">EXP</button>
+      <button class="button-class3" onclick="appendToDisplay('x^y')">x^y</button>
+      <button class="button-class2" onclick="appendToDisplay('0')">0</button>
+      <button class="button-class2" onclick="appendToDisplay('.')">.</button>
+      <button class="button-class1" onclick="calculateResult()">=</button>
+      <button class="button-class3" onclick="appendToDisplay('+')">+</button>
+    </div>
+  </div>
 </body>
 </html>
